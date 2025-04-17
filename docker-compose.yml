@@ -1,0 +1,45 @@
+# Copyright (c) 2024-2025 ELYES
+# All rights reserved.
+# Developed by ELYES
+#
+# SentinelVision Pro Development Environment
+# This file defines the Docker services required for development
+
+version: '3.8'
+
+services:
+  # PostgreSQL database for persistent storage
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: sentinelvision
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Redis for caching and real-time features
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  # Azurite for local Azure Storage emulation
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    ports:
+      - "10000:10000"  # Blob service
+      - "10001:10001"  # Queue service
+      - "10002:10002"  # Table service
+    volumes:
+      - azurite_data:/data
+
+# Named volumes for persistent data storage
+volumes:
+  postgres_data:
+  redis_data:
+  azurite_data: 

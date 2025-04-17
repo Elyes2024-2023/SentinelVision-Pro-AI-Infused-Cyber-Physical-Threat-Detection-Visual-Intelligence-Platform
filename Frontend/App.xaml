@@ -1,0 +1,21 @@
+<!--
+    Copyright (c) 2024-2025 ELYES
+    All rights reserved.
+    Developed by ELYES
+    
+    SentinelVision Pro Application Definition
+    This file defines the application-level resources and startup window
+-->
+<Application x:Class="SentinelVisionPro.Frontend.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SentinelVisionPro.Frontend"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Global styles and resources will be added here -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application> 
